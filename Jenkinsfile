@@ -6,9 +6,13 @@ pipeline {
         }
     }
     stages {
+        stage('Checkout') {
+          checkout scm
+        }
         stage('Test') {
             steps {
                 sh 'newman --version'
+                sh 'newman run collection.json'
             }
         }
     }
