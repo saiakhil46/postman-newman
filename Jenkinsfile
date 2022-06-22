@@ -6,9 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('Checkout') {
-          checkout scm
-        }
         stage('Test') {
             steps {
                 sh 'newman --version'
